@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container mt-3">
+    <h2 class="text-center mb-3">List of Your Tasks</h2>
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Task No.</th>
+            <th scope="col">Task Title</th>
+            <th scope="col">Task Description</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{task.taskTitle}}</td>
+          <td>{{task.taskDesc}}</td>
+          <td>
+            <form action=" {% url 'delete' task.sno %} " method="post" class="d-inline">
+              {% csrf_token %}
+              <input type="submit" class="btn btn-danger" value="Delete">
+
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+         
+        </tbody>
+      </table>
+      
+
+</div>
+
+{% endblock body %}
