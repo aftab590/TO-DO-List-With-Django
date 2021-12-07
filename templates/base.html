@@ -8,6 +8,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+      .footer {
+         position: fixed;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         background-color: black;
+         color: white;
+         text-align: center;
+         display: block;
+      }
+    </style>
+
     <title>TODO List</title>
   </head>
   <body>
@@ -35,10 +48,10 @@
       {% block body %}
       {% endblock body %}
 
-      <footer class="bg-dark text-light position-absolute fixed-bottom">
-          <p class="text-center py-2 my-0">
+      <footer class="footer">
+          <div class="container">
             Copyright &copy; 2021 - All rights reserved
-          </p>
+          </div>
       </footer>
 
       <!-- Optional JavaScript -->
